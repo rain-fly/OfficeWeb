@@ -1,7 +1,10 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html;charset=utf-8"%>
 <html>
 <head>
+
     <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9;IE=8;IE=7">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-control" content="no-cache">
@@ -90,12 +93,24 @@
 </head>
 
 <body>
-<div>
+<div class="ocxForm" style="float: left">
     <button name="button32" type="button"  onclick="return DownLoadFile()" >打开</button>
     <button name="button32" type="button"  onclick="return saveFile()" >保存</button>
 </div>
-<!-- -----------------------------== 装载weboffice控件 ==--------------------------------- -->
-<script src="LoadWebOffice.js"></script>
-<!-- --------------------------------== 结束装载控件 ==----------------------------------- -->
+<div class="ocxBody"  style="background-color: #1234" >
+    <!-- -----------------------------== 装载weboffice控件 ==--------------------------------- -->
+    <script>
+        var ocxWidth =  $(window).width();
+        var ocxHeight =  $(window).height();
+        ocxWidth  =  ocxWidth -200;
+        ocxHeight = ocxHeight -20;
+        var s = ""
+        s +=  "<object id=WebOffice1 height="+ocxHeight+" width="+ocxWidth+" style='LEFT: 0px; TOP: 0px'  classid='clsid:E77E049B-23FC-4DB8-B756-60529A35FAD5' codebase=WebOffice.cab#V6,0,2,0>"
+        s += "<param name='_ExtentX' value='6350'><param name='_ExtentY' value='6350'>"
+        s += "</OBJECT>"
+        document.write(s)
+    </script>
+    <!-- --------------------------------== 结束装载控件 ==----------------------------------- -->
+</div>
 </body>
 </html>
